@@ -72,12 +72,12 @@ class RPNBase
 				$state = 'state2';
 			}
 
-			if ($string[$i] === '(')
+			if ($string[$i] === self::OPEN_BRACKET)
 			{
 				$state = 'state3';
 			}
 
-			if ($string[$i] === ')')
+			if ($string[$i] === self::CLOSE_BRACKET)
 			{
 				$state = 'state4';
 			}
@@ -241,18 +241,18 @@ class RPNBase
 
 		$stack = array_reverse($this->stack);
 
-		foreach ($stack as $key => $char)
+		foreach ($stack as $key => $item)
 		{
 			unset($stack[$key]);
 
-			if ($char === '(')
+			if ($item === self::OPEN_BRACKET)
 			{
 				$this->stack = array_reverse($stack);
 
 				return;
 			}
 
-			$this->output[] = $char;
+			$this->output[] = $item;
 		}
 	}
 
@@ -274,7 +274,7 @@ class RPNBase
 
 		foreach ($stack as $key => $item)
 		{
-			if($item === '(')
+			if ($item === self::OPEN_BRACKET)
 			{
 				break;
 			}
