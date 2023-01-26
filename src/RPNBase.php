@@ -135,7 +135,7 @@ class RPNBase
 	/**
 	 * Состояние: ввода числа
 	 *
-	 * @param string $c
+	 * @param   string  $c
 	 *
 	 * @return void
 	 */
@@ -259,20 +259,30 @@ class RPNBase
 	 */
 	protected function state5(string $c): void
 	{
-		$last = array_pop($this->stack);
+		$stack = array_reverse($this->stack);
 
-		if (
-			isset($this->operators[$last], $this->operators[$c]) &&
-			($this->operators[$c] === $this->operators[$last])
-		)
+		foreach ($stack as $key => $item)
 		{
-			$this->output[] = $last;
-		}
-		else
-		{
-			$this->stack[] = $last;
+			if($item === '(')
+			{
+				break;
+			}
+
+			if (in_array($item, ['^']) && $item === $c)
+			{
+				break;
+			}
+
+			if ($this->operators[$item] < $this->operators[$c])
+			{
+				break;
+			}
+
+			$this->output[] = $item;
+			unset($stack[$key]);
 		}
 
+		$this->stack   = array_reverse($stack);
 		$this->stack[] = $c;
 	}
 
