@@ -7,6 +7,17 @@
  */
 class RPNBase
 {
+	private const UNARY_MINUS = '~';
+
+	private const OPEN_BRACKET = '(';
+
+	private const CLOSE_BRACKET = ')';
+
+	private const EXPONENTIATION = '^';
+
+	private const RIGHT_ASSOCIATIVE_EXPRESSION = [
+		self::EXPONENTIATION, self::UNARY_MINUS
+	];
 
 	protected string $state = ''; // текущее состояние
 
@@ -268,7 +279,7 @@ class RPNBase
 				break;
 			}
 
-			if (in_array($item, ['^']) && $item === $c)
+			if (in_array($item, self::RIGHT_ASSOCIATIVE_EXPRESSION, true) && $item === $c)
 			{
 				break;
 			}
