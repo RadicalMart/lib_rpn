@@ -3,10 +3,11 @@
 include __DIR__ . '/src/RPNBase.php';
 include __DIR__ . '/src/RPNCalc.php';
 include __DIR__ . '/src/RPNFunc.php';
-include __DIR__ . '/RPNWiki.php';
+include __DIR__ . '/src/RPNWiki.php';
 
 use RPN\RPNBase;
 use RPN\RPNCalc;
+use RPN\RPNWiki;
 
 $RPNBase = new RPNBase;
 $RPNCalc = new RPNCalc;
