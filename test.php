@@ -19,11 +19,11 @@ $RPNCalc->registerFuncCollection($list);
 echo "RPNBase:\n";
 $rpn = $RPNBase->to($argv[1]);
 echo "RPN: " . $rpn . "\n";
-echo $RPNCalc->calc($rpn);
+echo "Расчет: " . $RPNCalc->calc($rpn);
 
 
 echo "\n\nRPNWiki:\n";
 $RPNWiki = new RPNWiki($argv[1]);
 echo "RPN: " . $RPNWiki->getOutstring() . "\n";
-echo $RPNWiki->result;
+echo "Расчет: " . $RPNWiki->result;
 
