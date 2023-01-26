@@ -50,10 +50,16 @@ class RPNBase
 	 */
 	public function to(string $string): string
 	{
-		$state = 'state0';
+
+		$this->state0();
 
 		for ($i = 0; $i < strlen($string); $i++)
 		{
+			if ($string[$i] === ' ')
+			{
+				continue;
+			}
+
 			if (is_numeric($string[$i]))
 			{
 				$state = 'state1';
