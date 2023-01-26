@@ -4,6 +4,9 @@
 // в нем есть базовые операции, но поддержка функций нет
 // так же нет поддержки вещественных числах, вводить можно только целые
 
+use DomainException;
+use Exception;
+
 class RPNWiki
 {
 	private const UNARY_MINUS = '~';

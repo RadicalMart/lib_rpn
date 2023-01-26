@@ -1,9 +1,9 @@
 <?php namespace RPN;
 
 use Closure;
+use DomainException;
 use Exception;
 use InvalidArgumentException;
-use RuntimeException;
 
 /**
  * Класс для расчета значения по обратной польской записи
@@ -59,7 +59,7 @@ class RPNFunc
 		}
 		catch (Exception)
 		{
-			throw new RuntimeException(sprintf('Произошла ошибка при обработки функции %s', $name));
+			throw new DomainException(sprintf('Произошла ошибка при обработки функции %s', $name));
 		}
 	}
 
