@@ -27,7 +27,7 @@ return [
 		'name' => 'round',
 		'args' => 2,
 		'func' => static function (float $a, float $b) {
-			return round($a, $b);
+			return round($a, (int) $b);
 		}
 	],
 	[

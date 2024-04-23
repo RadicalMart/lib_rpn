@@ -54,7 +54,7 @@ class RPNCalc
 					$args[] = array_pop($stack);
 				}
 
-				$stack[] = $this->func->execute($item, $args);
+				$stack[] = $this->func->execute($item, array_reverse($args));
 			}
 			else
 			{
