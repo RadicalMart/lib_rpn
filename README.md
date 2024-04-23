@@ -11,4 +11,6 @@ $total = $RPNCalc->calc($rpn)
 ```
 
 ### Тест
+```shell
 php test.php "(max(1,50)-min(5,8)+round(5.7, 0))*3"
+```
