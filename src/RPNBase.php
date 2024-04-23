@@ -112,7 +112,8 @@ class RPNBase
 
 			}
 
-			$this->$state($string[$i]);
+
+            $this->$state($string[$i]);
 			$this->state = $state;
 
 		}
@@ -241,6 +242,7 @@ class RPNBase
 			array_pop($this->stack);
 			$func           = array_pop($this->stack); // удаляем скобку (
 			$this->output[] = $func;
+            $this->func = false;
 
 			return;
 		}
