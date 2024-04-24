@@ -57,7 +57,7 @@ class RPNFunc
 		{
 			return call_user_func_array($func['func'], $args);
 		}
-		catch (Exception)
+		catch (Exception $e)
 		{
 			throw new DomainException(sprintf('Произошла ошибка при обработки функции %s', $name));
 		}
