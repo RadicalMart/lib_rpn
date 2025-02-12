@@ -9,7 +9,8 @@
   ],
   "require": {
     "php": ">=7.4.0",
-    "ext-simplexml": "*"
+    "ext-simplexml": "*",
+    "ext-ctype": "*"
   },
   "autoload": {
     "psr-4": {
