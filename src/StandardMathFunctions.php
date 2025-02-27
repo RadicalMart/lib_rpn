@@ -8,11 +8,12 @@ class StandardMathFunctions implements FunctionsCollectionsInterface
     protected array $functions = [
         'ceil' => 1,
         'round' => 1,
-        'min' => 1,
-        'max' => 1,
+        'min' => 2,
+        'max' => 2,
         'sqrt' => 1,
         'sqr' => 1,
         'abs' => 1,
+        'power' => 2,
         'factorial' => 1,
         'isPrime' => 1,
     ];
@@ -112,6 +113,18 @@ class StandardMathFunctions implements FunctionsCollectionsInterface
     public function abs(float $number): float
     {
         return abs($number);
+    }
+
+    /**
+     * Возведение числа в степень
+     *
+     * @param float $a
+     * @param float $b
+     * @return float
+     */
+    public function pow(float $a, float $b): float
+    {
+        return $a ** $b;
     }
 
     /**
