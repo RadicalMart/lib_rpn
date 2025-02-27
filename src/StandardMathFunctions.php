@@ -13,7 +13,7 @@ class StandardMathFunctions implements FunctionsCollectionsInterface
         'sqrt' => 1,
         'sqr' => 1,
         'abs' => 1,
-        'power' => 2,
+        'pow' => 2,
         'factorial' => 1,
         'isPrime' => 1,
     ];
